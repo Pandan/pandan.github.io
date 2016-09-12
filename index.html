@@ -5,33 +5,22 @@
   <title>Grid</title>
   <base href="/">
 
-  <style type="text/css">
-    body:before {
-      content: attr(message);
-    }
-  </style>
+  <script>
+    // See http://www.backalleycoder.com/2016/05/13/sghpa-the-single-page-app-hack-for-github-pages/
+    (function(){
+      var redirect = sessionStorage.redirect;
+      delete sessionStorage.redirect;
+      if (redirect && redirect != location.href) {
+        history.replaceState(null, null, redirect);
+      }
+    })();
+  </script>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 
 </head>
 <body>
-  <script>
-    (function(){
-      var redirect = sessionStorage.redirect;
-      delete sessionStorage.redirect;
-      if (redirect && redirect != location.href) {
-        history.replaceState(null, null, redirect);
-        // REMOVE THIS - just showing the redirect route in the UI
-        //document.body.setAttribute('message', 'This page was redirected by 404.html, from the route: ' + redirect);
-      }
-      else {
-        // REMOVE THIS - just showing the redirect route in the UI
-        //document.body.setAttribute('message', 'This page was loaded directly from the index.html file');
-      }
-    })();
-  </script>
-
   <app-root>Loading...</app-root>
 <script type="text/javascript" src="inline.js"></script><script type="text/javascript" src="styles.28184244cfe10583aaba.bundle.js"></script><script type="text/javascript" src="main.399af02b519bac3ce044.bundle.js"></script></body>
 </html>
