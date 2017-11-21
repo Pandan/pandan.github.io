@@ -25077,7 +25077,7 @@ var Loader = function () {
       var _this = this;
 
       var loader = this.loader = new _pixi.loaders.Loader();
-      loader.add({ name: 'fnt', url: './assets/bitmap-fonts/arcadepix.fnt' });
+      loader.add({ name: 'fnt', url: './assets/fonts/arcadepix.fnt' });
       loader.onComplete.add(function () {
         console.log(_pixi.extras.BitmapText.fonts);
         _this.onComplete.dispatch();
